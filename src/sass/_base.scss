@@ -1,0 +1,20 @@
+// Resets
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: none;
+}
+
+// Variables
+$very-dark-gray: hsl(0, 0%, 17%);
+$dark-gray: hsl(0, 0%, 59%);
+
+body {
+  font-family: "Rubik", sans-serif;
+}

@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: none;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.iptracker {
+  display: grid;
+  justify-content: center;
+  background-image: url(../src/img/pattern-bg.png);
+  background-size: cover;
+  height: 280px;
+}
+
+.iptracker_title {
+  padding-top: 2.25rem;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.iptracker_form {
+  margin-top: 2.25rem;
+  text-align: center;
+}
+
+.iptracker_form_IP {
+  border: none;
+  width: 550px;
+  padding: 20px 20px 20px 25px;
+  border-radius: 15px 0 0 15px;
+  font-size: 18px;
+  color: #2b2b2b;
+  cursor: pointer;
+}
+
+.iptracker_form_btn {
+  border: none;
+  padding: 20px;
+  border-radius: 0px 15px 15px 0px;
+  font-size: 20px;
+  background: #2b2b2b;
+  margin-left: -10px;
+  color: blueviolet;
+  cursor: pointer;
+}
+
+.iptracker_display {
+  margin-top: 3rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 1100px;
+  padding: 3rem 2rem;
+}
+
+.iptracker_display_box {
+  padding-left: 2rem;
+}
+
+.iptracker_display_box:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.iptracker_display_title {
+  color: #969696;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.iptracker_display_info {
+  margin-top: 1.25rem;
+  color: #2b2b2b;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=main.css.map */
