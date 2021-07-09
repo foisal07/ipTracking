@@ -16,7 +16,7 @@
     margin-top: 2.25rem;
     text-align: center;
 
-    &_IP{
+    &_IP {
       border: none;
       width: 550px;
       padding: 20px 20px 20px 25px;
@@ -69,4 +69,16 @@
       font-size: 1.5rem;
     }
   }
+}
+
+div#map {
+  height: 100vh;
+  z-index: -1;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
+  color: blueviolet;
+  background-color: $very-dark-gray;
 }
