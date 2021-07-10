@@ -11,7 +11,7 @@ let ip, ipInfo, lat, lng, mapView;
 // 118.179.125.237
 // lat: 24.374, lng: 88.60114
 
-// Get IP JSON details
+// Get JSON IPdetails
 const getJSON = async function (ip) {
   try {
     const res = await fetch(
@@ -19,7 +19,6 @@ const getJSON = async function (ip) {
     );
     if (!res.ok) throw new Error("Invalid IP Address");
     const data = await res.json();
-    console.log(data);
     ipInfo = data;
     lat = ipInfo.location.lat;
     lng = ipInfo.location.lng;
@@ -74,7 +73,7 @@ const displayMap = function (lat, lng) {
   // Leaflet map marker
   L.popup()
     .setLatLng([lat, lng])
-    .setContent("Gtocha! The IP Located Around Here")
+    .setContent("Gotcha! The IP Located Here")
     .openOn(mapView);
 };
 

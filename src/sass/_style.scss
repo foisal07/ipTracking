@@ -1,0 +1,131 @@
+.iptracker {
+  display: grid;
+  justify-content: center;
+  background-image: url(../src/img/pattern-bg.png);
+  background-size: cover;
+  height: 280px;
+
+  &_title {
+    padding-top: 2.25rem;
+    color: white;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  &_form {
+    margin-top: 2.25rem;
+    text-align: center;
+
+    &_IP {
+      border: none;
+      width: 240px;
+
+      @include breakpoint-up(medium) {
+        width: 504px;
+        font-size: 18px;
+      }
+
+      @include breakpoint-up(large) {
+        width: 550px;
+        font-size: 18px;
+      }
+
+      padding: 20px 20px 20px 25px;
+      border-radius: 15px 0 0 15px;
+      font-size: 14px;
+      color: $very-dark-gray;
+      cursor: pointer;
+    }
+
+    &_btn {
+      border: none;
+      padding: 18px;
+
+      @include breakpoint-up(medium) {
+        padding: 20px;
+      }
+
+      @include breakpoint-up(large) {
+        padding: 20px;
+      }
+
+      border-radius: 0px 15px 15px 0px;
+      font-size: 20px;
+      background: $black;
+      margin-left: -10px;
+      color: $purple;
+      cursor: pointer;
+    }
+  }
+
+  &_display {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    width: 335px;
+
+    @include breakpoint-up(medium) {
+      width: 600px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large) {
+      width: 1000px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint-up(xlarge) {
+      width: 1100px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    height: auto;
+    padding-top: 2.5rem;
+    margin: 2.25rem;
+
+    &_box {
+      text-align: center;
+      padding-bottom: 2rem;
+
+      @include breakpoint-up(large) {
+        text-align: left;
+        padding: 1rem 2rem 0rem 2rem;
+        margin-bottom: 2rem;
+
+        &:not(:last-child) {
+          border-right: 1px solid #ddd;
+        }
+      }
+    }
+
+    &_title {
+      color: $dark-gray;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    &_info {
+      margin-top: 0.5rem;
+      color: $very-dark-gray;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+div#map {
+  height: 100vh;
+  z-index: -1;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.15);
+  background: $black;
+  color: $purple;
+  font-size: 1rem;
+  font-weight: 700;
+}

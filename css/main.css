@@ -36,42 +36,99 @@ body {
 
 .iptracker_form_IP {
   border: none;
-  width: 550px;
+  width: 240px;
   padding: 20px 20px 20px 25px;
   border-radius: 15px 0 0 15px;
-  font-size: 18px;
+  font-size: 14px;
   color: #2b2b2b;
   cursor: pointer;
 }
 
+@media (min-width: 40em) {
+  .iptracker_form_IP {
+    width: 504px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 64em) {
+  .iptracker_form_IP {
+    width: 550px;
+    font-size: 18px;
+  }
+}
+
 .iptracker_form_btn {
   border: none;
-  padding: 20px;
+  padding: 18px;
   border-radius: 0px 15px 15px 0px;
   font-size: 20px;
-  background: #2b2b2b;
+  background: #000000;
   margin-left: -10px;
-  color: blueviolet;
+  color: #f900f9;
   cursor: pointer;
 }
 
+@media (min-width: 40em) {
+  .iptracker_form_btn {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 64em) {
+  .iptracker_form_btn {
+    padding: 20px;
+  }
+}
+
 .iptracker_display {
-  margin-top: 3rem;
   background-color: #fff;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   border-radius: 15px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 1100px;
-  padding: 3rem 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  width: 335px;
+  height: auto;
+  padding-top: 2.5rem;
+  margin: 2.25rem;
+}
+
+@media (min-width: 40em) {
+  .iptracker_display {
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .iptracker_display {
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 87.5em) {
+  .iptracker_display {
+    width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .iptracker_display_box {
-  padding-left: 2rem;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
-.iptracker_display_box:not(:last-child) {
-  border-right: 1px solid #ddd;
+@media (min-width: 64em) {
+  .iptracker_display_box {
+    text-align: left;
+    padding: 1rem 2rem 0rem 2rem;
+    margin-bottom: 2rem;
+  }
+  .iptracker_display_box:not(:last-child) {
+    border-right: 1px solid #ddd;
+  }
 }
 
 .iptracker_display_title {
@@ -81,7 +138,7 @@ body {
 }
 
 .iptracker_display_info {
-  margin-top: 1.25rem;
+  margin-top: 0.5rem;
   color: #2b2b2b;
   font-weight: 700;
   font-size: 1.5rem;
@@ -90,5 +147,14 @@ body {
 div#map {
   height: 100vh;
   z-index: -1;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.15);
+  background: #000000;
+  color: #f900f9;
+  font-size: 1rem;
+  font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */
