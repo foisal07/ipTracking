@@ -29,6 +29,7 @@ const getJSON = async function (ip) {
 
 // Generate Display IP Details Markup
 const displayTrackedInfo = function (ipInfo) {
+  console.log(ipInfo);
   const displayMarkup = `
         <div class="iptracker_display_box">
           <p class="iptracker_display_title">IP ADDRESS</p>
@@ -79,41 +80,47 @@ const displayMap = function (lat, lng) {
 
 // Display IP details on form submit
 iptrackerForm.addEventListener("submit", async function (e) {
-  e.preventDefault();
+  try {
+    e.preventDefault();
 
-  // Get IP from form input
-  ip = iptracker_form_IP.value;
+    // Get IP from form input
+    ip = iptracker_form_IP.value;
 
-  // Get ip details
-  await getJSON(ip);
+    // Track IP
+    controlTrackIp(ip);
 
-  // Clear search form & previous IP details
-  iptracker_form_IP.value = "";
-  iptrackerDisplay.textContent = "";
+    //Clear search IP form
+    iptracker_form_IP.value = "";
 
-  // Display IP details
-  displayTrackedInfo(ipInfo);
-
-  // Remove old map
-  mapView.remove();
-
-  // Display Map
-  displayMap(lat, lng);
+    // Remove old map
+    mapView.remove();
+  } catch (err) {
+    alert(err);
+  }
 });
 
 // Detect & display IP details on load
 window.addEventListener("load", async function (e) {
-  e.preventDefault();
+  try {
+    e.preventDefault();
 
-  // Get IP from form browser
-  const res = await fetch("https://api.ipify.org/?format=json");
-  const data = await res.json();
-  ip = data.ip;
+    // Get IP from browser
+    const res = await fetch("https://api.ipify.org/?format=json");
+    const data = await res.json();
+    ip = data.ip;
 
+    // Track IP
+    controlTrackIp(ip);
+  } catch (err) {
+    alert(err);
+  }
+});
+
+const controlTrackIp = async function (ip) {
   // Get ip details
   await getJSON(ip);
 
-  // Clear previous details
+  // Clear previous IP details
   iptrackerDisplay.textContent = "";
 
   // Display IP details
@@ -121,9 +128,4 @@ window.addEventListener("load", async function (e) {
 
   // Display Map
   displayMap(lat, lng);
-});
-
-// const controlIpTrack = async function (ip, ipInfo) {
-//   await getJSON(ip);
-//   displayTrackedInfo(ipInfo);
-// };
+};
